@@ -5,6 +5,7 @@ import Signup from './pages/Signup'
 import Dashboard from './pages/Dashboard'
 import NewFolio from './pages/NewFolio'
 import FolioDetail from './pages/FolioDetail'
+import NewCurio from './pages/NewCurio'
 
 function ProtectedRoute({ children }) {
   const { user } = useAuth()
@@ -27,11 +28,11 @@ function App() {
           <Route path="/folios/:id" element={
             <ProtectedRoute><FolioDetail /></ProtectedRoute>
           } />
+          <Route path="/folios/:id/curios/new" element={
+            <ProtectedRoute><NewCurio /></ProtectedRoute>
+          } />
           <Route path="/exhibits/:id" element={
             <ProtectedRoute><div>Exhibit detail coming soon</div></ProtectedRoute>
-          } />
-          <Route path="/folios/:id/curios/new" element={
-            <ProtectedRoute><div>New Curio coming soon</div></ProtectedRoute>
           } />
         </Routes>
       </AuthProvider>
